@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Leopard Gecko</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center">
+        <h1 class="pb-3 m-3">Leopard Gecko</h1>
+        <div>
+            <h2>{{user.first_name}} {{user.last_name}}</h2>
+            <a href="/dashboard" class="btn btn-primary">Dashboard</a>      <!--buttons are next to each other not on top-->
+            <a href='/logout' class="btn btn-primary">Logout</a>
+        </div>
+    </nav>
+    <form action="/update/{{leopard_gecko.id}}" method="post" class="col-11 p-4 my-4 mx-auto">
+        <h2>Edit Leopard Gecko</h2>
+        <div class="d-flex center justify-content-between col-9">
+            <input type="hidden" name="id" value={{leopard_gecko.id}}>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="genetics">Genetics:</label>
+                    <input type="text" name="genetics" class="form-control mr-5" value={{leopard_gecko.genetics}}>
+                    <label for="hatch_date">Hatch Date:</label>
+                    <input type="date" name="hatch_date" class="form-control" value={{leopard_gecko.hatch_date}}>
+                    
+                    <label for="sex">Sex:</label>
+                    <input type="text" name="sex" class="form-control mr-5" value={{leopard_gecko.sex}}>
+                    <label for="gecko_id">Gecko ID:</label>
+                    <input type="number" name="gecko_id" class="form-control" value={{leopard_gecko.gecko_id}}>
+
+                    <label for="breeder">Breeder:</label>
+                    <input type="text" name="breeder" class="form-control mr-5" value={{leopard_gecko.breeder}}>
+                    <label for="weight">Weight:</label>
+                    <input type="number" name="weight" class="form-control" value={{leopard_gecko.weight}}>
+                    
+                    <label for="dam">Dam:</label>
+                    <input type="number" name="dam" class="form-control mr-5" value={{leopard_gecko.dam}}>
+                    <label for="sire">Sire:</label>
+                    <input type="number" name="sire" class="form-control" value={{leopard_gecko.sire}}>
+
+                    <label for="location">Location:</label>
+                    <input type="text" name="location" class="form-control mr-5" value={{leopard_gecko.location}}>
+                    <label for="image">Image:</label>
+                    <input type="text" name="image" class="form-control" value={{leopard_gecko.image}}>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

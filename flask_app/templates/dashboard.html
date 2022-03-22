@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class=" p-5 justify-content-between">
+        <nav class="d-flex justify-content-between align-items-center">
+        <h1 class="pb-3 m-3">Leopard Geckos</h1>
+        <div>
+            <h2>{{user.first_name}} {{user.last_name}}</h2>
+            <a href="/new/leo" class="btn btn-primary">Add a Leo</a>      
+            <a href='/logout' class="btn btn-primary">Logout</a>
+        </div>
+        </nav>
+        <div class="container d-flex justify-content-between mt-5 p-4 ">
+            <div class="col-4">
+                <h2>Leopard Geckos</h2>
+                <table class="table table-hover">
+                    <tbody>
+                        {% for leo in all_leos %}  
+                        <tr>
+                            <td>Genetics: {{leo.genetics}} - Hatch: {{leo.hatch_date}}
+                            </td>
+                            <td>
+                                <a href="/display/{{leo.id}}" class="btn btn-primary">View</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
