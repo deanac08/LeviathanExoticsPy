@@ -24,9 +24,14 @@ class LeopardGecko:
 
 
 
+    # @classmethod
+    # def create(cls,data):
+    #     query = "INSERT INTO leopard_geckos (genetics, sex, hatch_date, description, gecko_ID,  breeder, weight, dam, sire, location, image) VALUES (%(genetics)s,%(sex)s,%(hatch_date)s,%(gecko_ID)s,%(description)s, %(breeder)s,%(weight)s,%(dam)s,%(sire)s, %(location)s, %(image)s);"
+    #     results= connectToMySQL("leviathan_exotics").query_db(query, data)
+    #     return results
     @classmethod
-    def save(cls,data:dict) -> int:
-        query = "INSERT INTO leopard_geckos (genetics, sex, hatch_date, gecko_id, description, breeder, weight, dam, sire, location, image) VALUES (%(genetics)s,%(sex)s,%(hatch_date)s,%(gecko_id)s,%(description)s, %(breeder)s,%(weight)s,%(dam)s,%(sire)s, %(location)s, %(image)s);"
+    def create(cls,data):
+        query = "INSERT INTO leopard_geckos (genetics, sex, hatch_date) VALUES (%(genetics)s,%(sex)s,%(hatch_date)s);"
         results= connectToMySQL("leviathan_exotics").query_db(query, data)
         return results
 

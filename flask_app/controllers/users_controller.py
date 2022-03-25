@@ -13,6 +13,7 @@ def index():
 
     return render_template('index.html')
 
+
 @app.route('/register', methods=['post'])
 def register():
     if not User.register_valid(request.form):

@@ -27,7 +27,9 @@ def dashboard():
 
     return render_template('dashboard.html',user=user, all_leos=LeopardGecko.get_all())
 
-
+@app.route('/home')
+def home():
+    return render_template('home.html', all_leos=LeopardGecko.get_all())
 
 @app.route('/create/leo',methods=['POST'])
 def create_leo():
@@ -37,17 +39,33 @@ def create_leo():
         "genetics": request.form["genetics"],
         "sex": request.form["sex"],        
         "hatch_date": request.form["hatch_date"],
-        "user_id": session["user_id"],
-        "gecko_id": request.form["gecko_id"],
-        "breeder": request.form["breeder"],
-        "weight": request.form["weight"],
-        "dam": request.form["dam"],
-        "sire": request.form["sire"],
-        "location": request.form["location"],
-        "image": request.form["image"]
+        "user_id": session["user_id"]
     }
-    LeopardGecko.save(data)
+    LeopardGecko.create(data)
+    print(data)
     return redirect('/dashboard')
+
+# @app.route('/create/leo',methods=['POST'])
+# def create_leo():
+#     if not LeopardGecko.validate(request.form):
+#         return redirect('/new/leo')
+#     data = {
+#         "genetics": request.form["genetics"],
+#         "sex": request.form["sex"],        
+#         "hatch_date": request.form["hatch_date"],
+#         "user_id": session["user_id"],
+#         "description": request.form["description"],
+#         "gecko_ID": request.form["gecko_ID"],
+#         "breeder": request.form["breeder"],
+#         "weight": request.form["weight"],
+#         "dam": request.form["dam"],
+#         "sire": request.form["sire"],
+#         "location": request.form["location"],
+#         "image": request.form["image"]
+#     }
+#     LeopardGecko.create(data)
+#     print(data)
+#     return redirect('/dashboard')
 
 
 @app.route('/edit/<int:id>')
