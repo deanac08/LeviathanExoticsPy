@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="C:\Users\deana\Desktop\Reactsss\LeviathanExoticsPy\flask_app\static\style.css">
+    <link rel="style" href="static\style.css">
 </head>
 <body>
-    <div class="p-5 justify-content-between myOverlay" style="background-color: #222125;">
-        <nav class="d-flex justify-content-between align-items-center" style="background-color:#415e5a
+    <div style="background-color: #222125;">
+        <nav class="d-flex justify-content-between align-items-center mt-4" style="background-color:#415e5a
         ">
         <h1 class="pb-3 m-3">Leviathan Exotics</h1>
+        <img src="https://github.com/deanac08/LeviathanExoticsPy/blob/master/flask_app/templates/static/imgs/blanktshirts.jpg" id="logo" style="width:128px;height:128px"></img>
         <div class="d-flex justify-content-between m-4" >
             <h5 class="m-3">Resources</h5>
             <h5 class="m-3">Reptirarrium</h5>
@@ -20,9 +21,10 @@
             <a href="/" class="btn btn-primary m-3">Login / Create Account</a> 
         </div>
         </nav>
-        <div class="container d-flex justify-content-between mt-5 p-4 ">
+        <div class="container d-flex justify-content-between mt-5 p-4">
             <div class="col-4">
                 <h2>Leopard Geckos</h2>
+                <img src="https://github.com/deanac08/LeviathanExoticsPy/blob/master/flask_app/templates/imgs/blanklogo.png" />
                 <table class="table table-hover">
                     <tbody>
                         {% for leo in all_leos %}  
